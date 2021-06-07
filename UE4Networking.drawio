@@ -1,20 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2021-05-21T01:29:40.131Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="1yxK37AIYdDqHaeGIXXW" version="14.6.12" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-06-07T01:09:45.639Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="S1MjRof6SmujbG4xbIgx" version="14.7.5" type="github" pages="3">
   <diagram id="JvuuxttgNgkwClHyyFu2" name="第 1 页">
     <mxGraphModel dx="1422" dy="1931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="SQb546SRnWdh8VyM-8AY-2" value="UNetConnection" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="260" y="380" width="470" height="154" as="geometry" />
+          <mxGeometry x="260" y="310" width="450" height="214" as="geometry" />
         </mxCell>
-        <mxCell id="SQb546SRnWdh8VyM-8AY-3" value="- TOptional&lt;TCircularBuffer&lt;TUniquePtr&lt;FBitReader&gt;&gt;&gt; PacketOrderCache;&#xa;- FNetPacketNotify PacketNotify;&#xa;- TMap&lt;int32, int32&gt; ChannelIndexMap;&#xa;- TArray&lt;UChannel*&gt; Channels;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="26" width="470" height="94" as="geometry" />
+        <mxCell id="SQb546SRnWdh8VyM-8AY-3" value="- TOptional&lt;TCircularBuffer&lt;TUniquePtr&lt;FBitReader&gt;&gt;&gt; PacketOrderCache;&#xa;- FNetPacketNotify PacketNotify;&#xa;- TMap&lt;int32, int32&gt; ChannelIndexMap;&#xa;- TArray&lt;UChannel*&gt; Channels;&#xa;&#xa;// channelIndex 对应的下一个需要接收的Bunch序列号&#xa;//记录的是可靠bunch的下一个待接收的Bunch序列号&#xa;- TArray&lt;int32&gt;		InReliable;  &#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
+          <mxGeometry y="26" width="450" height="154" as="geometry" />
         </mxCell>
         <mxCell id="SQb546SRnWdh8VyM-8AY-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="120" width="470" height="8" as="geometry" />
+          <mxGeometry y="180" width="450" height="8" as="geometry" />
         </mxCell>
         <mxCell id="SQb546SRnWdh8VyM-8AY-5" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="128" width="470" height="26" as="geometry" />
+          <mxGeometry y="188" width="450" height="26" as="geometry" />
         </mxCell>
         <mxCell id="o2_gZ3kN2BpJZVYaGaaf-1" value="FInBunch" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="850" y="340" width="280" height="134" as="geometry" />
