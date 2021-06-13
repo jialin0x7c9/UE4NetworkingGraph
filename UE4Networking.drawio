@@ -1,23 +1,23 @@
-<mxfile host="app.diagrams.net" modified="2021-06-07T01:09:45.639Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="S1MjRof6SmujbG4xbIgx" version="14.7.5" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-06-13T03:02:35.751Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="bZssoAtHGS2gGZynb3PE" version="14.7.7" type="github" pages="3">
   <diagram id="JvuuxttgNgkwClHyyFu2" name="第 1 页">
-    <mxGraphModel dx="1422" dy="1931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2048" dy="1813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="SQb546SRnWdh8VyM-8AY-2" value="UNetConnection" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="260" y="310" width="450" height="214" as="geometry" />
+          <mxGeometry x="390" y="470" width="450" height="344" as="geometry" />
         </mxCell>
-        <mxCell id="SQb546SRnWdh8VyM-8AY-3" value="- TOptional&lt;TCircularBuffer&lt;TUniquePtr&lt;FBitReader&gt;&gt;&gt; PacketOrderCache;&#xa;- FNetPacketNotify PacketNotify;&#xa;- TMap&lt;int32, int32&gt; ChannelIndexMap;&#xa;- TArray&lt;UChannel*&gt; Channels;&#xa;&#xa;// channelIndex 对应的下一个需要接收的Bunch序列号&#xa;//记录的是可靠bunch的下一个待接收的Bunch序列号&#xa;- TArray&lt;int32&gt;		InReliable;  &#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="26" width="450" height="154" as="geometry" />
+        <mxCell id="SQb546SRnWdh8VyM-8AY-3" value="- FNetPacketNotify PacketNotify;&#xa;&#xa;- TOptional&lt;TCircularBuffer&lt;TUniquePtr&lt;FBitReader&gt;&gt;&gt; PacketOrderCache;&#xa;- TMap&lt;int32, int32&gt; ChannelIndexMap;&#xa;- TArray&lt;UChannel*&gt; Channels;&#xa;&#xa;// channelIndex 对应的下一个需要接收的Bunch序列号&#xa;//记录的是可靠bunch的下一个待接收的Bunch序列号&#xa;- TArray&lt;int32&gt;  InReliable;  &#xa;&#xa;- bool bFlushingPacketOrderCache;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
+          <mxGeometry y="26" width="450" height="284" as="geometry" />
         </mxCell>
         <mxCell id="SQb546SRnWdh8VyM-8AY-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="180" width="450" height="8" as="geometry" />
+          <mxGeometry y="310" width="450" height="8" as="geometry" />
         </mxCell>
         <mxCell id="SQb546SRnWdh8VyM-8AY-5" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="SQb546SRnWdh8VyM-8AY-2" vertex="1">
-          <mxGeometry y="188" width="450" height="26" as="geometry" />
+          <mxGeometry y="318" width="450" height="26" as="geometry" />
         </mxCell>
         <mxCell id="o2_gZ3kN2BpJZVYaGaaf-1" value="FInBunch" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="850" y="340" width="280" height="134" as="geometry" />
+          <mxGeometry x="1160" y="400" width="280" height="134" as="geometry" />
         </mxCell>
         <mxCell id="o2_gZ3kN2BpJZVYaGaaf-2" value="+ int32    PacketId;&#xa;+ FInBunch *   Next;&#xa;+ UNetConnection * Connection;&#xa;+ int32    ChIndex;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="o2_gZ3kN2BpJZVYaGaaf-1" vertex="1">
           <mxGeometry y="26" width="280" height="74" as="geometry" />
@@ -29,16 +29,16 @@
           <mxGeometry y="108" width="280" height="26" as="geometry" />
         </mxCell>
         <mxCell id="5Kny9_tc-0Gk9VmiHxyS-1" value="FNetPacketNotify" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="560" y="-170" width="530" height="284" as="geometry" />
+          <mxGeometry x="560" y="-170" width="680" height="380" as="geometry" />
         </mxCell>
         <mxCell id="5Kny9_tc-0Gk9VmiHxyS-2" value="//作为发送方&#xa;- SequenceNumberT OutSeq;&#xa;- SequenceNumberT OutAckSeq;&#xa; &#xa;//接收到的序列号=packetId&#xa;//有这个的原因是，支持不对数据包ack&#xa;- SequenceNumberT InAckSeq; &#xa;- SequenceNumberT InAckSeqAck;  //对端已接收到的序列号&#xa;&#xa;//作为接收方&#xa;- SequenceHistoryT InSeqHistory;&#xa;- SequenceNumberT InSeq;&#xa;&#xa; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5Kny9_tc-0Gk9VmiHxyS-1" vertex="1">
-          <mxGeometry y="26" width="530" height="224" as="geometry" />
+          <mxGeometry y="26" width="680" height="224" as="geometry" />
         </mxCell>
         <mxCell id="5Kny9_tc-0Gk9VmiHxyS-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="5Kny9_tc-0Gk9VmiHxyS-1" vertex="1">
-          <mxGeometry y="250" width="530" height="8" as="geometry" />
+          <mxGeometry y="250" width="680" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="5Kny9_tc-0Gk9VmiHxyS-4" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5Kny9_tc-0Gk9VmiHxyS-1" vertex="1">
-          <mxGeometry y="258" width="530" height="26" as="geometry" />
+        <mxCell id="5Kny9_tc-0Gk9VmiHxyS-4" value="+ SequenceNumberT::DifferenceT GetSequenceDelta(const FNotificationHeader&amp; NotificationData);&#xa;+ SequenceNumberT::DifferenceT Update(const FNotificationHeader&amp; NotificationData, Functor&amp;&amp; InFunc);&#xa;&#xa;- void FNetPacketNotify::ProcessReceivedAcks(const FNotificationHeader&amp; NotificationData, Functor&amp;&amp; InFunc);" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5Kny9_tc-0Gk9VmiHxyS-1" vertex="1">
+          <mxGeometry y="258" width="680" height="122" as="geometry" />
         </mxCell>
         <mxCell id="5Kny9_tc-0Gk9VmiHxyS-5" value="" style="endArrow=open;startArrow=circlePlus;endFill=0;startFill=0;endSize=8;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5Kny9_tc-0Gk9VmiHxyS-7" target="5Kny9_tc-0Gk9VmiHxyS-2" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -54,6 +54,24 @@
         </mxCell>
         <mxCell id="5Kny9_tc-0Gk9VmiHxyS-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="5Kny9_tc-0Gk9VmiHxyS-6" vertex="1">
           <mxGeometry y="90" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="w3oPFMXKAsbAwypzQbfn-1" value="FBitReaderMark" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="300" width="360" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="w3oPFMXKAsbAwypzQbfn-2" value="- int64 Pos;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="w3oPFMXKAsbAwypzQbfn-1">
+          <mxGeometry y="26" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="w3oPFMXKAsbAwypzQbfn-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="w3oPFMXKAsbAwypzQbfn-1">
+          <mxGeometry y="52" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="w3oPFMXKAsbAwypzQbfn-4" value="+ FBitReaderMark(): Pos(0);&#xa;+ int64 GetPos() const;&#xa;+ void Pop( FBitReader&amp; Reader );&#xa;+ void Copy( FBitReader&amp; Reader, TArray&lt;uint8&gt; &amp;Buffer );" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="w3oPFMXKAsbAwypzQbfn-1">
+          <mxGeometry y="60" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w3oPFMXKAsbAwypzQbfn-6" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5Kny9_tc-0Gk9VmiHxyS-4" target="SQb546SRnWdh8VyM-8AY-2">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="250" y="250" as="sourcePoint" />
+            <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
