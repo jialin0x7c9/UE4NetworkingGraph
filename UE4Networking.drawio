@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-27T15:02:25.204Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="cnlU1XPTLCvPsFPagFrC" version="14.7.7" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-07-05T01:34:26.981Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="BOxh_mhaqQ9RGNK4Jvlv" version="14.7.6" type="github" pages="4">
   <diagram id="JvuuxttgNgkwClHyyFu2" name="第 1 页">
-    <mxGraphModel dx="2249" dy="1931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1961" dy="1804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -71,6 +71,36 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="250" y="250" as="sourcePoint" />
             <mxPoint x="440" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-1" value="UPackageMap" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="-680" y="534" width="390" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-2" value="- bool					bShouldTrackUnmappedGuids;&#xa;- TSet&lt; FNetworkGUID &gt;	TrackedUnmappedNetGuids;&#xa;- TSet&lt; FNetworkGUID &gt;	TrackedMappedDynamicNetGuids;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-1">
+          <mxGeometry y="26" width="390" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-1">
+          <mxGeometry y="80" width="390" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-4" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-1">
+          <mxGeometry y="88" width="390" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-5" value="UPackageMapClient" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="-740" y="800" width="470" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-6" value="- TArray&lt;TArray&lt;uint8&gt;&gt;				ExportGUIDArchives;&#xa;- TSet&lt; FNetworkGUID &gt;				CurrentExportNetGUIDs;&#xa;- TMap&lt;FNetworkGUID, double&gt; CurrentQueuedBunchNetGUIDs;&#xa;- TArray&lt; FNetworkGUID &gt;				PendingAckGUIDs;&#xa;- FPackageMapAckState					AckState; &#xa;- FPackageMapAckState*				OverrideAckState;&#xa;- TArray&lt;FOutBunch* &gt;					ExportBunches;&#xa;- int32								ExportNetGUIDCount;&#xa;- TSharedPtr&lt; FNetGUIDCache &gt;			GuidCache;&#xa;- TArray&lt; FNetworkGUID &gt;				MustBeMappedGuidsInLastBunch;&#xa;- TSet&lt; uint64 &gt;						NetFieldExports;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-5">
+          <mxGeometry y="26" width="470" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-5">
+          <mxGeometry y="210" width="470" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-8" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HYYZ7wxcilcyPnHC77bf-5">
+          <mxGeometry y="218" width="470" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="HYYZ7wxcilcyPnHC77bf-10" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=0.482;entryY=1.028;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="HYYZ7wxcilcyPnHC77bf-5" target="HYYZ7wxcilcyPnHC77bf-4">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-540" y="740" as="sourcePoint" />
+            <mxPoint x="-380" y="740" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
